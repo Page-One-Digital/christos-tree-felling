@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christo's Tree Felling | Gauteng Experts Since 1994</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tap-highlight-transparent {-webkit-tap-highlight-color: transparent;}
+        /* Ensure smooth transition for mobile drawer */
+        #mobileMenu {
+            transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased pb-24 md:pb-0 tap-highlight-transparent">
+
+    <!-- TOP EMERGENCY ALERT BAR -->
+    <div class="bg-rose-600 text-white text-xs sm:text-sm py-2 px-3 sticky top-0 z-50 shadow-md font-medium">
+        <div class="max-w-7xl mx-auto flex flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-2 mx-auto sm:mx-0">
+                <span class="flex h-2.5 w-2.5 relative shrink-0">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-300 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-400"></span>
+                </span>
+                <span class="font-bold">24/7 Storm & Emergency Tree Service across Gauteng</span>
+            </div>
+            <a href="tel:0722228720" class="hidden sm:inline-flex items-center gap-1.5 bg-white text-rose-600 hover:bg-slate-100 font-extrabold px-3 py-1 rounded-full text-xs shadow-sm transition">
+                <i class="fa-solid fa-phone"></i> 0722 22 8720
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN MOBILE-FIRST HEADER -->
+    <header class="bg-white shadow-sm sticky top-[37px] sm:top-[41px] z-40 transition-all border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex justify-between items-center">
+            
+            <!-- Brand Logo -->
+            <div class="flex items-center gap-2.5">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-forest-900 text-emerald-400 rounded-xl flex items-center justify-center text-xl sm:text-2xl shadow-md shrink-0">
+                    <i class="fa-solid fa-tree"></i>
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-xl font-black text-slate-900 tracking-tight leading-none">CHRISTO'S</h1>
+                    <p class="text-[10px] sm:text-xs font-bold text-emerald-700 tracking-wider uppercase mt-0.5">Tree Felling • Est. 1994</p>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-7 font-semibold text-sm text-slate-600">
+                <a href="#services" onclick="scrollToSection(event, 'services')" class="hover:text-forest-700 transition">Services</a>
+                <a href="#calculator" onclick="scrollToSection(event, 'calculator')" class="hover:text-forest-700 transition">Instant Quote</a>
+                <a href="#guarantee" onclick="scrollToSection(event, 'guarantee')" class="hover:text-forest-700 transition">Free Cuttings Offer</a>
+                <a href="#about" onclick="scrollToSection(event, 'about')" class="hover:text-forest-700 transition">Why Us (Est. 1994)</a>
+                <a href="#areas" onclick="scrollToSection(event, 'areas')" class="hover:text-forest-700 transition">Gauteng Areas</a>
+            </nav>
+
+            <!-- Desktop Call Button -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="tel:0722228720" class="inline-flex items-center gap-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-5 py-3 rounded-xl shadow-lg shadow-emerald-600/20 transition transform active:scale-95">
+                    <i class="fa-solid fa-phone-volume text-sm"></i>
+                    <span>0722 22 8720</span>
+                </a>
+            </div>
+
+            <!-- Mobile Action Buttons & Hamburger -->
+            <div class="flex items-center gap-2 lg:hidden">
+                <a href="tel:0722228720" class="w-10 h-10 bg-emerald-600 text-white rounded-xl flex items-center justify-center text-base shadow-md active:scale-95 transition sm:hidden">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <button onclick="toggleMobileMenu()" class="w-10 h-10 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl flex items-center justify-center text-lg shadow-sm transition focus:outline-none">
+                    <i id="menuIcon" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mobile Dropdown Menu Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 py-5 shadow-xl space-y-3">
+            <a href="#services" onclick="scrollToSection(event, 'services'); toggleMobileMenu();" class="block py-2.5 px-4 rounded-xl font-bold text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+                <i class="fa-solid fa-tree mr-2 text-emerald-600"></i> Services
+            </a>
+            <a href="#calculator" onclick="scrollToSection(event, 'calculator'); toggleMobileMenu();" class="block py-2.5 px-4 rounded-xl font-bold text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+                <i class="fa-solid fa-calculator mr-2 text-emerald-600"></i> Instant Quote
+            </a>
+            <a href="#guarantee" onclick="scrollToSection(event, 'guarantee'); toggleMobileMenu();" class="block py-2.5 px-4 rounded-xl font-bold text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+                <i class="fa-solid fa-truck-ramp-box mr-2 text-emerald-600"></i> Free Cuttings Offer
+            </a>
+            <a href="#about" onclick="scrollToSection(event, 'about'); toggleMobileMenu();" class="block py-2.5 px-4 rounded-xl font-bold text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+                <i class="fa-solid fa-shield-halved mr-2 text-emerald-600"></i> Why Us (Est. 1994)
+            </a>
+            <a href="#areas" onclick="scrollToSection(event, 'areas'); toggleMobileMenu();" class="block py-2.5 px-4 rounded-xl font-bold text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 transition">
+                <i class="fa-solid fa-map-location-dot mr-2 text-emerald-600"></i> Gauteng Areas
+            </a>
+            <div class="pt-2">
+                <a href="tel:0722228720" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-sm shadow">
+                    <i class="fa-solid fa-phone"></i> Call 0722 22 8720
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-b from-forest-950 via-forest-900 to-forest-800 text-white pt-10 pb-16 sm:py-24 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#34d399_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Trust Pill Badge -->
+                    <div class="inline-flex items-center gap-2 bg-emerald-900/80 border border-emerald-600/60 text-emerald-300 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm mx-auto lg:mx-0">
+                        <i class="fa-solid fa-award text-amber-400"></i>
+                        <span>Trading Since 1994 • Over 30 Years Experience in Gauteng</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.15]">
+                        Gauteng's Trusted <span class="text-emerald-400 underline decoration-emerald-500/40">Tree Felling</span> Experts
+                    </h2>
+
+                    <p class="text-slate-300 text-sm sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                        Professional hazardous tree dismantling, palm cleaning, and stump removal. <span class="text-white font-semibold underline decoration-amber-400">FREE removal of all cuttings of work done by us!</span> Fully insured against damages.
+                    </p>
+
+                    <!-- Trust Icons Grid (Mobile Optimized) -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-2 text-xs font-semibold">
+                        <div class="bg-forest-900/90 border border-forest-700/80 p-3 rounded-2xl flex items-center gap-2.5 shadow-sm">
+                            <i class="fa-solid fa-truck-ramp-box text-emerald-400 text-base shrink-0"></i>
+                            <span class="text-left">Free Cuttings Removal</span>
+                        </div>
+                        <div class="bg-forest-900/90 border border-forest-700/80 p-3 rounded-2xl flex items-center gap-2.5 shadow-sm">
+                            <i class="fa-solid fa-shield-halved text-emerald-400 text-base shrink-0"></i>
+                            <span class="text-left">Fully Insured & OUTsurance</span>
+                        </div>
+                        <div class="bg-forest-900/90 border border-forest-700/80 p-3 rounded-2xl flex items-center gap-2.5 shadow-sm col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-user-gear text-emerald-400 text-base shrink-0"></i>
+                            <span class="text-left">Height Certified & WCC</span>
+                        </div>
+                    </div>
+
+                    <!-- Hero Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-3 pt-4">
+                        <a href="tel:0722228720" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-forest-950 font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-500/20 transition flex items-center justify-center gap-3 text-base active:scale-95">
+                            <i class="fa-solid fa-phone text-lg"></i>
+                            <span>Call Now: 0722 22 8720</span>
+                        </a>
+                        <a href="#calculator" onclick="scrollToSection(event, 'calculator')" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold px-7 py-4 rounded-2xl transition flex items-center justify-center gap-2 text-base active:scale-95">
+                            <i class="fa-solid fa-calculator text-emerald-400"></i>
+                            <span>Instant Quote Estimator</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Quick Callback Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-slate-900 rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 relative">
+                        <div class="absolute -top-3.5 right-6 bg-amber-400 text-forest-950 text-[11px] font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow">
+                            Rapid Response
+                        </div>
+
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 mb-1">Request a Free Quote</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm mb-5">Fill in your details and Christo's team will call you back within 15 minutes.</p>
+
+                        <form onsubmit="handleHeroForm(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Your Name</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400"><i class="fa-solid fa-user text-xs"></i></span>
+                                    <input type="text" required placeholder="e.g. Johan van der Merwe" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone Number</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400"><i class="fa-solid fa-phone text-xs"></i></span>
+                                    <input type="tel" required placeholder="e.g. 082 123 4567" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Gauteng Suburb / Area</label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400"><i class="fa-solid fa-location-dot text-xs"></i></span>
+                                    <input type="text" required placeholder="e.g. Centurion, Pretoria, Sandton" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Service Required</label>
+                                <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                                    <option>Tree Felling & Removal</option>
+                                    <option>Stump Grinding / Removal</option>
+                                    <option>Tree Pruning & Trimming</option>
+                                    <option>Palm Tree Cleaning</option>
+                                    <option>24/7 Emergency Storm Damage</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="w-full bg-forest-900 hover:bg-forest-800 text-white font-extrabold py-3.5 rounded-xl shadow-lg transition text-sm sm:text-base active:scale-95 flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane text-emerald-400"></i>
+                                <span>Get Free Quote Now</span>
+                            </button>
+                            <p class="text-center text-[11px] text-slate-400"><i class="fa-solid fa-lock text-emerald-600 mr-1"></i> No spam. Fast & secure local service.</p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST & ACCREDITATIONS BADGE BAR -->
+    <section class="bg-amber-50 border-y border-amber-200/80 py-6 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center md:text-left">
+                
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 text-amber-800 rounded-xl flex items-center justify-center text-lg sm:text-xl shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-xs sm:text-sm">Fully Insured</h4>
+                        <p class="text-[11px] text-slate-600">OUTsurance Protection</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center text-lg sm:text-xl shrink-0">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-xs sm:text-sm">Free Cuttings Removal</h4>
+                        <p class="text-[11px] text-slate-600">Of work done by us!</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 text-blue-800 rounded-xl flex items-center justify-center text-lg sm:text-xl shrink-0">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-xs sm:text-sm">Height Certified</h4>
+                        <p class="text-[11px] text-slate-600">WCC Professional Standards</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 text-purple-800 rounded-xl flex items-center justify-center text-lg sm:text-xl shrink-0">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-xs sm:text-sm">Trading Since 1994</h4>
+                        <p class="text-[11px] text-slate-600">30+ Years Experience</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FREE CUTTINGS SPECIAL HIGHLIGHT SECTION (Key Flyer USP) -->
+    <section id="guarantee" class="py-16 bg-white overflow-hidden scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-emerald-900 to-forest-950 text-white rounded-3xl p-6 sm:p-12 shadow-xl relative">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-emerald-400 text-9xl pointer-events-none">
+                    <i class="fa-solid fa-scissors"></i>
+                </div>
+                <div class="max-w-2xl space-y-4 relative z-10">
+                    <span class="bg-amber-400 text-forest-950 font-black text-xs px-3.5 py-1 rounded-full uppercase tracking-wider">
+                        Special Guarantee
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black">FREE Removal of All Cuttings of Work Done By Us!</h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Unlike other tree fellers who leave behind massive piles of branches and debris for you to clean up, Christo's team ensures your property is left immaculate. All cuttings, logs, and brushwood are loaded and removed entirely free of charge.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-4 text-xs sm:text-sm font-semibold">
+                        <div class="flex items-center gap-2 text-emerald-300">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i> Zero Cleanup Stress
+                        </div>
+                        <div class="flex items-center gap-2 text-emerald-300">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i> Fully Insured Protection
+                        </div>
+                        <div class="flex items-center gap-2 text-emerald-300">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i> Open 24/7
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES OFFERED SECTION -->
+    <section id="services" class="py-16 sm:py-20 bg-slate-100 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
+                <span class="text-emerald-700 bg-emerald-100 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Professional Services</span>
+                <h2 class="text-2xl sm:text-4xl font-black text-slate-900">Complete Tree Care Solutions in Gauteng</h2>
+                <p class="text-slate-600 text-xs sm:text-sm">Safe, certified arboriculture delivered with precision equipment and decades of experience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                
+                <!-- Service 1 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-emerald-500 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-forest-900 text-emerald-400 rounded-2xl flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Tree Felling & Removal</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">Safe sectional dismantling of dangerous, dying, or unwanted trees in tight residential spaces without risking your home or fences.</p>
+                    </div>
+                    <a href="tel:0722228720" class="inline-flex items-center gap-2 text-forest-900 font-bold text-xs sm:text-sm hover:text-emerald-600 transition">
+                        Book Tree Removal <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-emerald-500 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-forest-900 text-emerald-400 rounded-2xl flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-circle-dot"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Stump Grinding & Removal</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">Complete below-ground stump elimination to prevent termite infestations and clear your lawn for new grass, paving, or landscaping.</p>
+                    </div>
+                    <a href="tel:0722228720" class="inline-flex items-center gap-2 text-forest-900 font-bold text-xs sm:text-sm hover:text-emerald-600 transition">
+                        Book Stump Grinding <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-emerald-500 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-forest-900 text-amber-400 rounded-2xl flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">24/7 Emergency Storm Damage</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">Severe Gauteng storms often knock trees over roofs, powerlines, and driveways. Our emergency crew is on standby 24 hours a day.</p>
+                    </div>
+                    <a href="tel:0722228720" class="inline-flex items-center gap-2 text-forest-900 font-bold text-xs sm:text-sm hover:text-emerald-600 transition">
+                        Emergency Dispatch <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-emerald-500 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-forest-900 text-emerald-400 rounded-2xl flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-scissors"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Pruning & Trimming</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">Professional crown thinning and deadwooding by height-certified climbers to promote healthy growth and protect overhanging structures.</p>
+                    </div>
+                    <a href="tel:0722228720" class="inline-flex items-center gap-2 text-forest-900 font-bold text-xs sm:text-sm hover:text-emerald-600 transition">
+                        Book Pruning <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-emerald-500 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-forest-900 text-emerald-400 rounded-2xl flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Palm Tree Cleaning</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">Removal of dead fronds, seed pods, and rat nests from tall palm trees to keep gardens neat and eliminate fire hazards.</p>
+                    </div>
+                    <a href="tel:0722228720" class="inline-flex items-center gap-2 text-forest-900 font-bold text-xs sm:text-sm hover:text-emerald-600 transition">
+                        Book Palm Cleaning <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:border-emerald-500 transition group flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-forest-900 text-emerald-400 rounded-2xl flex items-center justify-center text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Site & Bush Clearing</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">Complete plot and bush clearing for residential or commercial construction developments across Gauteng.</p>
+                    </div>
+                    <a href="tel:0722228720" class="inline-flex items-center gap-2 text-forest-900 font-bold text-xs sm:text-sm hover:text-emerald-600 transition">
+                        Book Site Clearing <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE QUOTE ESTIMATOR SECTION -->
+    <section id="calculator" class="py-16 sm:py-20 bg-forest-950 text-white scroll-mt-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-3 mb-10">
+                <span class="text-emerald-400 bg-emerald-900/60 border border-emerald-700 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Instant Estimator</span>
+                <h2 class="text-2xl sm:text-4xl font-black">Estimate Your Tree Service Cost</h2>
+                <p class="text-slate-300 text-xs sm:text-sm">Select options below to calculate an estimated price range and request priority booking.</p>
+            </div>
+
+            <div class="bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl space-y-8">
+                
+                <!-- Step 1 -->
+                <div>
+                    <label class="block text-xs font-black text-slate-800 uppercase mb-3">1. Select Service Type</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        <label class="border-2 border-slate-200 rounded-2xl p-3.5 flex flex-col items-center text-center cursor-pointer hover:border-emerald-600 transition has-[:checked]:border-emerald-600 has-[:checked]:bg-emerald-50/50">
+                            <input type="radio" name="calcService" value="felling" checked class="hidden" onchange="updateEstimate()">
+                            <i class="fa-solid fa-tree text-xl text-emerald-700 mb-1"></i>
+                            <span class="font-bold text-xs sm:text-sm">Tree Felling</span>
+                        </label>
+                        <label class="border-2 border-slate-200 rounded-2xl p-3.5 flex flex-col items-center text-center cursor-pointer hover:border-emerald-600 transition has-[:checked]:border-emerald-600 has-[:checked]:bg-emerald-50/50">
+                            <input type="radio" name="calcService" value="pruning" class="hidden" onchange="updateEstimate()">
+                            <i class="fa-solid fa-scissors text-xl text-emerald-700 mb-1"></i>
+                            <span class="font-bold text-xs sm:text-sm">Pruning</span>
+                        </label>
+                        <label class="border-2 border-slate-200 rounded-2xl p-3.5 flex flex-col items-center text-center cursor-pointer hover:border-emerald-600 transition has-[:checked]:border-emerald-600 has-[:checked]:bg-emerald-50/50">
+                            <input type="radio" name="calcService" value="stump" class="hidden" onchange="updateEstimate()">
+                            <i class="fa-solid fa-circle-dot text-xl text-emerald-700 mb-1"></i>
+                            <span class="font-bold text-xs sm:text-sm">Stump Grinding</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div>
+                    <label class="block text-xs font-black text-slate-800 uppercase mb-3">2. Tree Size & Height</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                        <label class="border-2 border-slate-200 rounded-2xl p-3.5 flex flex-col items-center text-center cursor-pointer hover:border-emerald-600 transition has-[:checked]:border-emerald-600 has-[:checked]:bg-emerald-50/50">
+                            <input type="radio" name="calcSize" value="small" class="hidden" onchange="updateEstimate()">
+                            <span class="font-bold text-xs sm:text-sm">Small (&lt; 5m)</span>
+                        </label>
+                        <label class="border-2 border-slate-200 rounded-2xl p-3.5 flex flex-col items-center text-center cursor-pointer hover:border-emerald-600 transition has-[:checked]:border-emerald-600 has-[:checked]:bg-emerald-50/50">
+                            <input type="radio" name="calcSize" value="medium" checked class="hidden" onchange="updateEstimate()">
+                            <span class="font-bold text-xs sm:text-sm">Medium (5m-10m)</span>
+                        </label>
+                        <label class="border-2 border-slate-200 rounded-2xl p-3.5 flex flex-col items-center text-center cursor-pointer hover:border-emerald-600 transition has-[:checked]:border-emerald-600 has-[:checked]:bg-emerald-50/50">
+                            <input type="radio" name="calcSize" value="large" class="hidden" onchange="updateEstimate()">
+                            <span class="font-bold text-xs sm:text-sm">Large (&gt; 10m)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div>
+                    <label class="block text-xs font-black text-slate-800 uppercase mb-3">3. Additional Options (Free Cuttings Removal Included!)</label>
+                    <div class="space-y-2">
+                        <label class="border border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-slate-50 text-xs sm:text-sm font-medium">
+                            <input type="checkbox" id="addStumpCombo" checked onchange="updateEstimate()" class="w-4 h-4 text-emerald-600 rounded">
+                            <span>Include stump treatment combo</span>
+                        </label>
+                        <label class="border border-slate-200 rounded-xl p-3 flex items-center gap-3 cursor-pointer hover:bg-slate-50 text-xs sm:text-sm font-medium">
+                            <input type="checkbox" id="addEmergencyPriority" onchange="updateEstimate()" class="w-4 h-4 text-emerald-600 rounded">
+                            <span>24/7 Emergency Storm Dispatch</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Box -->
+                <div class="bg-forest-50 border border-forest-200 rounded-2xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                    <div>
+                        <span class="text-[11px] font-extrabold text-forest-800 uppercase tracking-wider block mb-0.5">Estimated Price Range</span>
+                        <div id="priceDisplay" class="text-2xl sm:text-3xl font-black text-forest-900">R 1,500 – R 3,200</div>
+                        <p class="text-[11px] text-slate-500 mt-0.5">Includes FREE cuttings removal! Final quote confirmed on site.</p>
+                    </div>
+                    <button onclick="openBookingModal()" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-6 py-3.5 rounded-xl shadow transition text-sm shrink-0 active:scale-95">
+                        Lock In Quote
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US (EST. 1994) -->
+    <section id="about" class="py-16 sm:py-20 bg-white scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-5">
+                    <span class="text-emerald-700 bg-emerald-50 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Trading Since 1994</span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-slate-900">Over 30 Years of Professional Tree Care</h2>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        Founded in 1994, Christo's Tree Felling has built an uncompromised reputation for professional workmanship, safety compliance, and friendly service throughout Gauteng.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs sm:text-sm">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-shield-halved text-xs"></i></div>
+                            <div><h4 class="font-bold text-slate-900">Fully Insured</h4><p class="text-slate-500 text-[11px]">Protected against property damages.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-truck-ramp-box text-xs"></i></div>
+                            <div><h4 class="font-bold text-slate-900">Free Cuttings Removal</h4><p class="text-slate-500 text-[11px]">Clean up guaranteed.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-user-gear text-xs"></i></div>
+                            <div><h4 class="font-bold text-slate-900">Height Certified</h4><p class="text-slate-500 text-[11px]">WCC trained climbers.</p></div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 bg-emerald-100 text-emerald-800 rounded-xl flex items-center justify-center shrink-0 mt-0.5"><i class="fa-solid fa-clock text-xs"></i></div>
+                            <div><h4 class="font-bold text-slate-900">Open 24/7</h4><p class="text-slate-500 text-[11px]">Always ready for emergencies.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="tel:0722228720" class="inline-flex items-center gap-2 bg-forest-900 hover:bg-forest-800 text-white font-bold px-6 py-3.5 rounded-xl text-xs sm:text-sm shadow transition">
+                            <i class="fa-solid fa-phone text-emerald-400"></i> Speak to Christo Directly
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Info Box Card -->
+                <div class="bg-gradient-to-br from-forest-900 to-forest-950 rounded-3xl p-8 sm:p-10 text-white shadow-xl relative overflow-hidden">
+                    <div class="absolute -right-8 -bottom-8 opacity-10 text-emerald-400 text-8xl pointer-events-none"><i class="fa-solid fa-tree"></i></div>
+                    <div class="relative z-10 space-y-4">
+                        <span class="bg-amber-400 text-forest-950 font-black text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Gauteng Coverage</span>
+                        <h3 class="text-xl sm:text-2xl font-black">Fast Dispatch Across All Suburbs</h3>
+                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                            Centurion, Pretoria, Johannesburg, Midrand, Sandton, Randburg, Fourways, and surrounding Gauteng regions.
+                        </p>
+                        <div class="pt-4 border-t border-forest-800 flex items-center justify-between">
+                            <div>
+                                <span class="block text-[10px] text-slate-400 uppercase font-bold">Direct Line</span>
+                                <span class="text-lg sm:text-xl font-black text-emerald-400">0722 22 8720</span>
+                            </div>
+                            <a href="tel:0722228720" class="bg-emerald-500 hover:bg-emerald-400 text-forest-950 font-extrabold px-4 py-2.5 rounded-xl text-xs shadow active:scale-95 transition">
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE AREAS ACROSS GAUTENG -->
+    <section id="areas" class="py-14 bg-slate-100 border-t border-slate-200 scroll-mt-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="max-w-xl mx-auto space-y-2">
+                <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">Service Coverage</span>
+                <h3 class="text-xl sm:text-3xl font-black text-slate-900">Active Across Gauteng</h3>
+                <p class="text-slate-600 text-xs sm:text-sm">On-site quotations and emergency tree felling in:</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 text-xs sm:text-sm">
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 font-bold text-slate-800">Centurion</div>
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 font-bold text-slate-800">Pretoria</div>
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 font-bold text-slate-800">Midrand</div>
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 font-bold text-slate-800">Johannesburg</div>
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 font-bold text-slate-800">Sandton</div>
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 font-bold text-slate-800">Fourways</div>
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 font-bold text-slate-800">Randburg</div>
+                <div class="bg-white p-3 rounded-xl shadow-sm border border-slate-200 font-bold text-slate-800">East Rand</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-forest-950 text-white pt-12 pb-24 sm:pb-12 border-t border-forest-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-forest-900 text-xs sm:text-sm">
+                
+                <div class="md:col-span-6 space-y-3">
+                    <div class="flex items-center gap-2.5">
+                        <div class="w-8 h-8 bg-emerald-600 text-forest-950 rounded-lg flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-tree"></i>
+                        </div>
+                        <h3 class="font-black text-base">CHRISTO'S TREE FELLING</h3>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-md">
+                        Professional workmanship, fully insured against damages, and free removal of all cuttings of work done by us. Trading in Gauteng since 1994.
+                    </p>
+                    <div class="text-emerald-400 font-bold text-base pt-1">
+                        <i class="fa-solid fa-phone mr-1"></i> 0722 22 8720
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-2">
+                    <h4 class="font-bold uppercase tracking-wider text-emerald-400 text-xs">Quick Links</h4>
+                    <ul class="space-y-1.5 text-slate-300 text-xs">
+                        <li><a href="#services" onclick="scrollToSection(event, 'services')" class="hover:text-emerald-400 transition">Services</a></li>
+                        <li><a href="#calculator" onclick="scrollToSection(event, 'calculator')" class="hover:text-emerald-400 transition">Instant Quote Calculator</a></li>
+                        <li><a href="#guarantee" onclick="scrollToSection(event, 'guarantee')" class="hover:text-emerald-400 transition">Free Cuttings Offer</a></li>
+                        <li><a href="#about" onclick="scrollToSection(event, 'about')" class="hover:text-emerald-400 transition">Why Us (Est. 1994)</a></li>
+                        <li><a href="#areas" onclick="scrollToSection(event, 'areas')" class="hover:text-emerald-400 transition">Gauteng Areas</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-3 space-y-2">
+                    <h4 class="font-bold uppercase tracking-wider text-emerald-400 text-xs">Credentials</h4>
+                    <ul class="space-y-1.5 text-slate-300 text-xs">
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Trading Since 1994</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Fully Insured Protection</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Height Certified & WCC</li>
+                        <li><i class="fa-solid fa-check text-emerald-400 mr-1"></i> Open 24/7 Emergencies</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-[11px] text-slate-500 gap-2 text-center sm:text-left">
+                <p>&copy; 1994 - 2026 Christo's Tree Felling. All Rights Reserved. Gauteng, South Africa.</p>
+                <p>Mobile-First Conversion Mockup.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STICKY MOBILE BOTTOM ACTION BAR -->
+    <div class="fixed bottom-0 inset-x-0 bg-forest-950/95 backdrop-blur-md border-t border-forest-800 p-2.5 sm:hidden z-50 flex items-center gap-2 shadow-2xl">
+        <a href="tel:0722228720" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs shadow active:scale-95 transition">
+            <i class="fa-solid fa-phone text-sm"></i>
+            <span>Call 0722 22 8720</span>
+        </a>
+        <a href="https://wa.me/27722228720?text=Hi%20Christo,%20I%20need%20a%20tree%20felling%20quote%20in%20Gauteng." target="_blank" class="w-12 h-12 bg-emerald-500 hover:bg-emerald-400 text-forest-950 font-bold rounded-xl flex items-center justify-center text-xl shadow shrink-0 active:scale-95 transition">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- BOOKING SUCCESS MODAL -->
+    <div id="bookingModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 relative shadow-2xl">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="modalContent" class="space-y-4">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-xl mb-1">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-900">Lock In Estimate</h3>
+                <p class="text-xs text-slate-600">Enter your details to confirm your calculated estimate and request priority on-site quotation.</p>
+
+                <form onsubmit="handleModalSubmit(event)" class="space-y-3 pt-1">
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Your Name</label>
+                        <input type="text" required placeholder="e.g. Maria Smith" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Phone Number</label>
+                        <input type="tel" required placeholder="e.g. 072 222 8720" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1">Gauteng Suburb</label>
+                        <input type="text" required placeholder="e.g. Centurion / Pretoria" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-emerald-600">
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 rounded-xl shadow transition text-xs active:scale-95">
+                        Submit Priority Request
+                    </button>
+                </form>
+            </div>
+
+            <div id="modalSuccess" class="hidden text-center py-6 space-y-3">
+                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-2xl mx-auto">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h3 class="text-xl font-black text-slate-900">Request Received!</h3>
+                <p class="text-xs text-slate-600">Thank you! Christo or our Gauteng dispatch team will call you back within 15 minutes.</p>
+                <button onclick="closeBookingModal()" class="w-full bg-forest-900 text-white font-bold py-2.5 rounded-xl text-xs">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC & SMOOTH SCROLLING -->
+    <script>
+        // Toggle Mobile Hamburger Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Robust Smooth Scrolling with Sticky Header & Alert Bar Offset Compensation
+        function scrollToSection(event, targetId) {
+            event.preventDefault();
+            const targetElement = document.getElementById(targetId);
+            if (!targetElement) return;
+
+            // Calculate exact height of the alert bar + sticky header
+            const alertBar = document.querySelector('.bg-rose-600');
+            const header = document.querySelector('header');
+            const offset = (alertBar ? alertBar.offsetHeight : 0) + (header ? header.offsetHeight : 0) + 16;
+
+            const elementPosition = targetElement.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+
+        // Quote Calculator Logic
+        function updateEstimate() {
+            const service = document.querySelector('input[name="calcService"]:checked').value;
+            const size = document.querySelector('input[name="calcSize"]:checked').value;
+            const addStump = document.getElementById('addStumpCombo').checked;
+            const addEmergency = document.getElementById('addEmergencyPriority').checked;
+
+            let min = 1200;
+            let max = 2500;
+
+            if (service === 'felling') {
+                if (size === 'small') { min = 1200; max = 2200; }
+                if (size === 'medium') { min = 2200; max = 4500; }
+                if (size === 'large') { min = 4500; max = 9800; }
+            } else if (service === 'pruning') {
+                if (size === 'small') { min = 900; max = 1800; }
+                if (size === 'medium') { min = 1600; max = 3200; }
+                if (size === 'large') { min = 3000; max = 6500; }
+            } else if (service === 'stump') {
+                if (size === 'small') { min = 800; max = 1500; }
+                if (size === 'medium') { min = 1500; max = 2800; }
+                if (size === 'large') { min = 2500; max = 5000; }
+            }
+
+            if (addStump && service !== 'stump') {
+                min += 800;
+                max += 1500;
+            }
+            if (addEmergency) {
+                min += 1000;
+                max += 2000;
+            }
+
+            document.getElementById('priceDisplay').innerText = `R ${min.toLocaleString()} – R ${max.toLocaleString()}`;
+        }
+
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+            document.getElementById('modalContent').classList.remove('hidden');
+            document.getElementById('modalSuccess').classList.add('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function handleHeroForm(e) {
+            e.preventDefault();
+            alert('Thank you! Your quote request has been sent to Christo\'s Tree Felling. We will call you shortly.');
+            e.target.reset();
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            document.getElementById('modalContent').classList.add('hidden');
+            document.getElementById('modalSuccess').classList.remove('hidden');
+        }
+
+        window.onload = function() {
+            updateEstimate();
+        }
+    </script>
+</body>
+</html>
